@@ -1,43 +1,32 @@
-// =======================================
-// Portfólio | Maria Júlia - Desenvolvedora Fullstack
-// =======================================
+// Scroll suave até o portfólio
+function scrollToPortfolio() {
+  document.querySelector('#portfolio').scrollIntoView({ behavior: 'smooth' });
+}
 
-// 🌐 Mensagem no console (branding discreto)
-console.log(
-  "%cDesenvolvido por Maria Júlia | Fullstack Developer",
-  "color:#38bdf8; font-size:14px; font-weight:600;"
-);
-
-// 🔄 Scroll suave ao clicar em links internos
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", e => {
+// Animação de scroll suave nos links do menu
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    const target = document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// ✨ Animação de fade-in ao rolar (para seções)
-const sections = document.querySelectorAll("section");
+// Destaque de link ativo ao rolar a página
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav a');
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80;
+    if (scrollY >= sectionTop) current = section.getAttribute('id');
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
     }
   });
-}, { threshold: 0.2 });
-
-sections.forEach(section => observer.observe(section));
-
-// 📧 Feedback ao clicar no botão de contato
-const contactBtn = document.querySelector(".btn[href^='mailto']");
-if (contactBtn) {
-  contactBtn.addEventListener("click", () => {
-    alert("Abrindo seu aplicativo de e-mail...");
-  });
-}
-
-
+});
