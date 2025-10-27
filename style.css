@@ -1,16 +1,16 @@
-/* Reset básico para fonte e corpo */
+/* Reset básico para o corpo e fontes */
 body {
-  background-color: #121212; /* Fundo bem escuro */
-  color: #e0e0e0; /* Texto claro e suave */
+  background-color: #121212; /* Fundo escuro */
+  color: #e0e0e0; /* Texto claro */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0 1rem;
 }
 
-/* Header estilizado */
+/* Header */
 header {
-  background-color: #1f1f1f; /* Fundo mais claro que o body */
+  background-color: #1f1f1f; /* Fundo escuro médio */
   padding: 2rem 1rem;
   text-align: center;
   border-bottom: 1px solid #333;
@@ -48,7 +48,7 @@ section h2 {
   font-weight: 600;
 }
 
-/* Listas de serviços */
+/* Listas (serviços) */
 .servicos ul {
   list-style: none;
   padding-left: 0;
@@ -63,7 +63,7 @@ section h2 {
 }
 
 .servicos li::before {
-  content: "✔"; /* Check elegante */
+  content: "✔";
   position: absolute;
   left: 0;
   color: #3fbf7f;
@@ -74,7 +74,7 @@ section h2 {
 /* Skills grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(110px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 1rem;
   padding: 1rem 0;
 }
@@ -96,10 +96,19 @@ section h2 {
   color: #fff;
 }
 
-/* Link de contato */
+/* Contato */
+.contato {
+  text-align: center;
+}
+
+.contato p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
+
 .contato a {
   display: inline-block;
-  margin-top: 1rem;
   padding: 0.8rem 1.6rem;
   background-color: #3fbf7f;
   color: #121212;
@@ -112,4 +121,27 @@ section h2 {
 .contato a:hover {
   background-color: #2f8f5e;
   color: #e0e0e0;
+}
+
+/* Links em geral */
+a {
+  color: #3fbf7f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2f8f5e;
+  text-decoration: underline;
+}
+
+/* Responsividade simples */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
 }
