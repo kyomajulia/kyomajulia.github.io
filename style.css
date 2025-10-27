@@ -174,7 +174,6 @@ body {
 }
 
 /* ===== Contato ===== */
-/* ===== Contato ===== */
 .contact {
   padding: 60px 0;
   background-color: var(--bg-card); /* Fundo escuro como os cards */
@@ -214,6 +213,15 @@ body {
   color: #ff4757;
 }
 
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ===== Responsivo ===== */
 /* Responsivo */
 @media (max-width: 768px) {
   .contact {
@@ -227,29 +235,5 @@ body {
   .contact p,
   .contact-info p {
     font-size: 1rem;
-  }
-}
-
-
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 40px;
-  color: var(--text-muted);
-  font-size: 14px;
-}
-
-/* ===== Responsivo ===== */
-@media (max-width: 768px) {
-  .header {
-    padding: 20px 30px;
-  }
-
-  .hero-content h1 {
-    font-size: 42px;
-  }
-
-  .section {
-    padding: 80px 30px;
   }
 }
