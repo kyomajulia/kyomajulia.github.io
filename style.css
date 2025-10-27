@@ -1,1 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #1e40af, #2563eb, #38bdf8);
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color: #facc15;
+}
+
+.hero-content p {
+  margin: 1rem auto 2rem;
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #f1f5f9;
+}
+
+.btn {
+  background-color: #facc15;
+  color: #1e293b;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #fde047;
+  transform: scale(1.05);
+}
+
+/* ===== SEÇÕES ===== */
+section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  color: #38bdf8;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== SOBRE ===== */
+.sobre p {
+  margin-bottom: 1rem;
+}
+
+/* ===== SERVIÇOS ===== */
+.servicos ul {
+  list-style: none;
+}
+
+.servicos li {
+  background: rgba(56, 189, 248, 0.1);
+  margin: 0.5rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.servicos li:hover {
+  background: rgba(56, 189, 248, 0.2);
+}
+
+/* ===== SKILLS ===== */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skills-grid span {
+  background: #1e293b;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.skills-grid span:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* ===== CONTATO ===== */
+.contato {
+  text-align: center;
+  background: rgba(56, 189, 248, 0.05);
+  border-radius: 10px;
+  padding: 3rem 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .skills-grid {
+    justify-content: center;
+  }
+}
