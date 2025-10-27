@@ -176,40 +176,32 @@ body {
 /* ===== Contato ===== */
 .contact {
   padding: 60px 0;
-  background-color: var(--bg-card); /* Fundo escuro como os cards */
-  text-align: center;
-  border-radius: 12px 12px 0 0; /* Cantos arredondados no topo */
+  background-color: var(--bg-dark); /* Mesma cor do fundo da página */
+  text-align: left; /* Alinha o texto igual o resto da página */
 }
 
 .contact h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #fff; /* Branco para destacar */
+  color: #fff;
 }
 
 .contact p {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
-  color: var(--text-light); /* Texto claro */
-  margin-bottom: 15px;
-}
-
-.contact-info p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  margin: 10px 0;
   color: var(--text-light);
+  margin-bottom: 10px;
 }
 
-.contact-info a {
+.contact a {
   color: #ff6b6b;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
 }
 
-.contact-info a:hover {
+.contact a:hover {
   color: #ff4757;
 }
 
@@ -222,7 +214,6 @@ footer {
 }
 
 /* ===== Responsivo ===== */
-/* Responsivo */
 @media (max-width: 768px) {
   .contact {
     padding: 40px 20px;
@@ -232,8 +223,7 @@ footer {
     font-size: 2rem;
   }
 
-  .contact p,
-  .contact-info p {
+  .contact p {
     font-size: 1rem;
   }
 }
