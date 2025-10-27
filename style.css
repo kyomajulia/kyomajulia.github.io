@@ -1,147 +1,219 @@
-/* Reset básico para o corpo e fontes */
-body {
-  background-color: #121212; /* Fundo escuro */
-  color: #e0e0e0; /* Texto claro */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --bg-dark: #0b0f1a;
+  --bg-card: #111529;
+  --text-light: #f5f5f5;
+  --text-muted: #b0b3c1;
+  --gradient: linear-gradient(90deg, #4e54c8, #8f94fb);
+  --transition: 0.3s ease;
+}
+
+* {
   margin: 0;
-  padding: 0 1rem;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header */
-header {
-  background-color: #1f1f1f; /* Fundo escuro médio */
-  padding: 2rem 1rem;
-  text-align: center;
-  border-bottom: 1px solid #333;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
-header h1 {
-  font-size: 2.8rem;
-  color: #a3d2ca; /* Verde água suave */
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-  letter-spacing: 1px;
+/* ===== Header ===== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(11, 15, 26, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  z-index: 1000;
 }
 
-header p {
-  font-size: 1.3rem;
-  color: #cdd7d6; /* Cinza claro */
-  font-weight: 400;
-  font-style: italic;
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #8f94fb;
 }
 
-/* Seções */
-section {
-  margin: 3rem auto;
-  max-width: 900px;
-  padding: 0 1rem;
-}
-
-section h2 {
-  font-size: 2rem;
-  border-bottom: 2px solid #a3d2ca;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  color: #ade8f4; /* Azul claro */
-  font-weight: 600;
-}
-
-/* Listas (serviços) */
-.servicos ul {
+.nav ul {
+  display: flex;
   list-style: none;
-  padding-left: 0;
+  gap: 25px;
 }
 
-.servicos li {
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-  color: #e0e0e0;
-  position: relative;
-  padding-left: 2rem;
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
-.servicos li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #3fbf7f;
-  font-weight: 700;
-  font-size: 1.1rem;
+.nav a:hover,
+.nav a.active {
+  color: white;
 }
 
-/* Skills grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
-.skills-grid span {
-  background: #263238;
-  color: #80cbc4;
-  padding: 0.7rem 1rem;
+.btn-gradient {
+  background: var(--gradient);
+  padding: 10px 20px;
   border-radius: 6px;
-  text-align: center;
-  font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.6);
-  transition: background-color 0.3s ease;
-  cursor: default;
+  color: white;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
 }
 
-.skills-grid span:hover {
-  background-color: #3fbf7f;
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 80px;
+  background: var(--bg-dark);
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  line-height: 1.1;
+}
+
+.hero-content span {
+  font-family: 'Playfair Display', serif;
   color: #fff;
 }
 
-/* Contato */
-.contato {
+.hero-content p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.hero-content button {
+  margin-top: 40px;
+}
+
+/* ===== Section Base ===== */
+.section {
+  padding: 120px 80px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== About ===== */
+.about p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* ===== Portfolio ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Services ===== */
+.service-list {
+  list-style: none;
+  line-height: 2;
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+/* ===== Tecnologias ===== */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.tech-grid span {
+  background: var(--bg-card);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.tech-grid span:hover {
+  background: var(--gradient);
+}
+
+/* ===== Contato ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+}
+
+input, textarea {
+  background: var(--bg-card);
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  resize: none;
+}
+
+textarea {
+  height: 120px;
+}
+
+/* ===== Footer ===== */
+footer {
   text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
-.contato p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #ddd;
-}
-
-.contato a {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background-color: #3fbf7f;
-  color: #121212;
-  font-weight: 700;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.contato a:hover {
-  background-color: #2f8f5e;
-  color: #e0e0e0;
-}
-
-/* Links em geral */
-a {
-  color: #3fbf7f;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #2f8f5e;
-  text-decoration: underline;
-}
-
-/* Responsividade simples */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 30px;
   }
 
-  section h2 {
-    font-size: 1.5rem;
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .section {
+    padding: 80px 30px;
   }
 }
